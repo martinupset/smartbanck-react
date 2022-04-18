@@ -48,14 +48,12 @@ function RewardCataloguePage() {
                     catalogueListLoaded ?
                         (
                             <div className="row" >
-                                <h6>Get the items from api</h6>
+                                {/* <h6>Get the items from api</h6> */}
                                 {catalogueList.map(c => (
 
                                     <div className="col-md-4" key={c.id}>
 
-                                        {/* 
-                                          Call the Catalogue item component and pass the props into it.
-                                        */}
+                                        <CatalogueItem catalogue={c}></CatalogueItem>
                                         
                                         <br></br>
                                     </div>

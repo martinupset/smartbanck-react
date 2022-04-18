@@ -1,6 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import './CatalogueItem.css';
 import amazon from '../../images/amazon.png';
+import star from '../../images/star.gif'
+import uber from '../../images/uber.png'
+import walmart from '../../images/walmart.png'
 import flipkart from '../../images/flipkart.jpg';
 import bookmyshow from '../../images/bookmyshow.png';
 import titan from '../../images/titan.jpg';
@@ -23,6 +26,7 @@ const CatalogueItem = ({ catalogue }) => {
      * @param item 
      */
     const getItemImage = (item) => {
+        console.log(item)
 
 
         // the below matches the string in a given word.
@@ -36,6 +40,12 @@ const CatalogueItem = ({ catalogue }) => {
             return bookmyshow;
         } else if (item.match(/titan/i) != null) {
             return titan;
+        } else if (item.match(/Starbucks/i) != null) {
+            return star;
+        }else if (item.match(/Walmart/i) != null) {
+            return walmart;
+        }else if (item.match(/Uber/i) != null) {
+            return uber;
         }
 
     }

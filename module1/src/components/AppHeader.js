@@ -24,14 +24,14 @@ function AppHeader() {
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item navbar-link active">
                             {/* Provide Homepage routing link */}
-                            <Link className="nav-link" to="#">
+                            <Link className="nav-link" to="/">
                                 <i className="fas fa-home"></i>
                                 <span className="sr-only">(current)</span>
                             </Link>
                         </li>
                         <li className="nav-item navbar-link">
                             {/* Provide Rewards routing link */}
-                            <Link className="btn btn-success" to="#">
+                            <Link className="btn btn-success" to="/rewards">
                                 Rewards Catalogue
                             </Link>
 
