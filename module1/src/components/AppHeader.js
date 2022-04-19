@@ -2,13 +2,18 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/AppHeader.css'
 import AppRoute from '../AppRoutes';
+import {useContext} from 'react'
+import {LoginContext} from '../contexts/LoginContext';
 
 function AppHeader() {
+    const loginContext = useContext(LoginContext)
+    console.log(loginContext)
 
     const cartCount = 0;
     let history = useHistory()
 
     const logoutUser = () => {
+        loginContext.logoutUser()
         history.push("/login")
     }
 
@@ -55,7 +60,7 @@ function AppHeader() {
                     <div className="header-right">
 
                         <Link type="button" className="btn btn-success" to="/">
-                            <i className="fas fa-user" />&nbsp; Welcome Guest
+                            <i className="fas fa-user" />&nbsp; Welcome {loginContext.loggedInUser.userName == '' ? 'Guest' : loginContext.loggedInUser.userName}
                             <span className="sr-only">logged in user</span>
                         </Link>
                     </div>
