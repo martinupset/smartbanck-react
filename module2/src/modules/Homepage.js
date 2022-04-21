@@ -1,4 +1,5 @@
 import React from 'react';
+import { LoginContext } from '../contexts/LoginContext';
 
 function Homepage() {
 
@@ -11,14 +12,18 @@ function Homepage() {
         totalRewardsGained: 0
     }
 
+    
 
     return (
+
         <div className="homepage container">
             <h2>Welcome to SmartBank credit card</h2>
            
             <div className="user-detail">
+            
+                   
                 <div>
-                    <table className="table table-striped">
+                    <table className="table table-striped" >
                         <thead>
                             <tr>
                                 <th>Credit Card Number</th>
@@ -30,15 +35,16 @@ function Homepage() {
                         </thead>
                         <tbody>
                             <tr>
-                                <td>ccNumber</td>
-                                <td>ccName</td>
-                                <td>userName</td>
-                                <td>availableRedeemPoints</td>
-                                <td>totalRewardsGained</td>
+                                <td>{loggedInUser.ccNumber}</td>
+                                <td>{loggedInUser.ccName}</td>
+                                <td>{loggedInUser.userName}</td>
+                                <td>{loggedInUser.availableRedeemPoints}</td>
+                                <td>{loggedInUser.totalRewardsGained}</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                
             </div>
         </div>
     );
