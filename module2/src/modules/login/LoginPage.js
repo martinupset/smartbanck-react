@@ -29,6 +29,7 @@ function LoginPage() {
         /**
          * Set user id from input
          */
+        //rk
          setUserId(e.target.value)
 
 
@@ -38,6 +39,7 @@ function LoginPage() {
         /**
          * Set password from input
          */
+        //rk
          setPassword(e.target.value);
     }
 
@@ -57,9 +59,11 @@ function LoginPage() {
                 console.log(response);
                 setUserId('');
                 setPassword('');
-                
+                //RK:  updating the login context
                 setLoginUserDetails(response.data.body)
+                //RK: navigating to the homepage after login
                 history.push('/');
+                //RK: change button text to LogOut
                 document.getElementById('logbtn').innerText="Log Out";
 
             })

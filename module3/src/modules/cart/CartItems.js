@@ -19,7 +19,7 @@ function CartItems() {
         setItems(cartItems);
 
     }
-
+    //RK: 
     const purchaseOrder = () => {
         /**
          * pass appropriate attributes of orderdata
@@ -41,6 +41,7 @@ function CartItems() {
                  * refresh the login details
                  * call the appropriate method from the cart the context to update the cart details.
                  */
+                //rk
                   console.log(response);
                   refreshLoginDetails();
                   afterPurchase();

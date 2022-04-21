@@ -50,7 +50,7 @@ const CatalogueItem = ({ catalogue }) => {
             return flipkart;
         }
     }
-
+    //RK: add selected item to cart and pass the parameter to catalogue
     const performAddToCart = (item) => {
         item.preventDefault();
         addToCart(catalogue);     
@@ -85,7 +85,7 @@ const CatalogueItem = ({ catalogue }) => {
                         {
                             isLoggedIn ? (
                         <div>
-                            {/* Add Action to cart button */}
+                            {/*RK: Add Action to cart button */}
                             <button onClick={performAddToCart} className="btn btn-success cart-button">
                                 <i className="fas fa-cart-plus"></i>&nbsp;
                                 Add to cart

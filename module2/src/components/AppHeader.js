@@ -21,8 +21,11 @@ function AppHeader() {
         /**
          * Write logic to route to login page on clicking logout button.
          */
+        //RK trigger logOut function
         loginContext.logoutUser();
+        // rk route to login page
         history.push("/login")
+        // rk change button text to LogIn
         document.getElementById('logbtn').innerText="Log In";
     }
 

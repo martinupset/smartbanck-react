@@ -5,7 +5,7 @@ import { CartContext } from '../../contexts/CartContext';
 import CartItems from './CartItems';
 
 function CartPage() {
-
+    //rk: usecontext to get user detail and cartItems, to get  isloggedIn status and return appropriate page
     const { isLoggedIn, loggedInUser } = useContext(LoginContext);
     const { cartItems } = useContext(CartContext);
 

@@ -4,7 +4,8 @@ import { LoginContext } from '../contexts/LoginContext';
 import {useContext} from 'react'
 
 function Homepage() {
-
+    
+    //RK: useContext to get user API data from loginContext.js 
     const { loggedInUser, isLoggedIn, logoutUser } = useContext(LoginContext);
 
     /**

@@ -12,7 +12,7 @@ function Homepage() {
         totalRewardsGained: 0
     }
 
-    
+    //RK: pass data from loggedInUser dummy user into below table. 
 
     return (
 
