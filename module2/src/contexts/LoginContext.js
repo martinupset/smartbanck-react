@@ -58,8 +58,7 @@ function LoginContextProvider(props) {
             } else {
                 console.log('error', error.message);
 
-            }
-        
+            }        
 
         })
 

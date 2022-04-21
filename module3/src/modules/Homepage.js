@@ -1,23 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { LoginContext } from '../contexts/LoginContext';
+import {useContext} from 'react'
 
 function Homepage() {
 
-    const loggedInUser = {
-        ccNumber: 0,
-        ccName: "Dummy Card",
-        userName: "Guest User",
-        userId: "guest",
-        availableRedeemPoints: 0,
-        totalRewardsGained: 0
-    }
-    const isLoggedIn = false;
+    const { loggedInUser, isLoggedIn, logoutUser } = useContext(LoginContext);
 
     /**
      * Replace the above login details with details from LoginContext
      * 
      */
+    
+    
 
     return (
         <div className="homepage container">

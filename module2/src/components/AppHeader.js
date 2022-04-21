@@ -1,18 +1,29 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../styles/AppHeader.css'
 import AppRoute from '../AppRoutes';
+import { LoginContext } from '../contexts/LoginContext';
+import { CartContext } from '../contexts/CartContext';
+import {useContext} from 'react'
 
 function AppHeader() {
+   const loginContext = useContext(LoginContext);
+    
+    const cartCount = useContext(CartContext);
+   //const { cartCount } = useContext(CartContext);
+   useEffect(() => {
 
-    const cartCount = 0;
+    }, [cartCount])
+
     const history = useHistory();
 
     const logoutUser = () => {
         /**
          * Write logic to route to login page on clicking logout button.
          */
+        loginContext.logoutUser();
         history.push("/login")
+        document.getElementById('logbtn').innerText="Log In";
     }
 
     return (
@@ -49,7 +60,7 @@ function AppHeader() {
                         <Link type="button" className="btn btn-success" to="/cart">
                             <i className="fas fa-shopping-cart" />&nbsp; My Cart &nbsp;
                             <span className="badge badge-light">
-                                {cartCount}
+                                {cartCount.cartCount} 
                             </span>
                             <span className="sr-only">cart items</span>
                         </Link>
@@ -58,12 +69,12 @@ function AppHeader() {
                     <div className="header-right">
 
                         <Link type="button" className="btn btn-success" to="/">
-                            <i className="fas fa-user" />&nbsp; Welcome Guest
+                            <i className="fas fa-user" />&nbsp; Welcome {loginContext.loggedInUser.userName==''? 'Guest':loginContext.loggedInUser.userName}
                             <span className="sr-only">logged in user</span>
                         </Link>
                     </div>
 
-                    <button className="btn btn-dark" onClick={logoutUser}>
+                    <button className="btn btn-dark" onClick={logoutUser} id="logbtn">
                         <i className="fas fa-sign-out-alt" />&nbsp; Log Out
 
                     </button>
