@@ -82,15 +82,18 @@ const CatalogueItem = ({ catalogue }) => {
                         <h6>
                             Redeemption Points : {catalogue.redeemptionPoint}
                         </h6><br />
-
+                        {
+                            isLoggedIn ? (
                         <div>
-                            {/* rk Add Action to cart button */}
+                            {/* Add Action to cart button */}
                             <button onClick={performAddToCart} className="btn btn-success cart-button">
                                 <i className="fas fa-cart-plus"></i>&nbsp;
                                 Add to cart
                             </button>
 
                         </div>
+                        ) : (<div></div>)
+                            }
                     </div>
                 </div>
             </div>
