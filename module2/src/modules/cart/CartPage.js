@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CartItems from './CartItems';
+import { LoginContext } from '../../contexts/LoginContext';
+import { useContext } from 'react';
+
 
 function CartPage() {
-
-    const isLoggedIn = false;
+    const loginContext = useContext(LoginContext);
+    const isLoggedIn = loginContext.isLoggedIn;
     const cartItems = [];
 
     const loggedInUser = {
